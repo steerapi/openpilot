@@ -291,8 +291,8 @@ void cameras_init(DualCameraState *s) {
     assert(false);
   } else if (strcmp(product_name, "OnePlus3") == 0 && strcmp(project_name, "15811") == 0) {
     // only OP3T support
-    init_array_imx298[0].reg_data = 3;
-    cameras_supported[CAMERA_ID_IMX298].bayer_flip = 3;
+    // init_array_imx298[0].reg_data = 3;
+    // cameras_supported[CAMERA_ID_IMX298].bayer_flip = 3;
     s->device = DEVICE_OP3T;
   } else {
     assert(false);
