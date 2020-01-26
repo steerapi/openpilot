@@ -11,8 +11,8 @@ _RHD_REGION_MAP = [ ['AUS', -54.76, -9.23, 112.91, 159.11], \
                     ['UK', 49.9, 60.84, -8.62, 1.77] ]
 
 def is_rhd_region(latitude, longitude):
-  for region in _RHD_REGION_MAP:
-    if region[1] <= latitude <= region[2] and \
-      region[3] <= longitude <= region[4]:
-      return True
-  return False
+  # for region in _RHD_REGION_MAP:
+  #   if region[1] <= latitude <= region[2] and \
+  #     region[3] <= longitude <= region[4]:
+  #     return True
+  return True
