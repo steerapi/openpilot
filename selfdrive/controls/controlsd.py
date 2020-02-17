@@ -198,6 +198,9 @@ def state_transition(frame, CS, CP, state, events, soft_disable_timer, v_cruise_
       soft_disable_timer = 300   # 3s
       for e in get_events(events, [ET.SOFT_DISABLE]):
         AM.add(frame, e, enabled)
+    
+    elif get_events(events, [ET.ENABLE]):
+      v_cruise_kph = initialize_v_cruise(CS.vEgo, CS.buttonEvents, v_cruise_kph_last)
 
   # SOFT DISABLING
   elif state == State.softDisabling:
