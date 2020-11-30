@@ -23,7 +23,7 @@ class CarInterface(CarInterfaceBase):
     ret.steerActuatorDelay = 0.12  # Default delay, Prius has larger delay
     ret.steerLimitTimer = 0.4
 
-    if candidate not in [CAR.PRIUS, CAR.RAV4, CAR.RAV4H]:  # These cars use LQR/INDI
+    if candidate not in [CAR.PRIUS, CAR.RAV4, CAR.RAV4H, CAR.COROLLA_TSS2, CAR.COROLLAH_TSS2]:  # These cars use LQR/INDI
       ret.lateralTuning.init('pid')
       ret.lateralTuning.pid.kiBP, ret.lateralTuning.pid.kpBP = [[0.], [0.]]
 
@@ -195,27 +195,18 @@ class CarInterface(CarInterfaceBase):
 
     elif candidate in [CAR.COROLLA_TSS2, CAR.COROLLAH_TSS2]:
       stop_and_go = True
-      ret.steerActuatorDelay = 0.60
-      ret.safetyParam = 53
       ret.wheelbase = 2.63906
-      ret.steerRatio = 15.33
-      tire_stiffness_factor = 0.444  # not optimized yet
       ret.mass = 3060. * CV.LB_TO_KG + STD_CARGO_KG
-      ret.lateralTuning.pid.kpV, ret.lateralTuning.pid.kiV = [[0.6], [0.1]]
-      ret.lateralTuning.pid.kf = 0.00007818594
-      # stop_and_go = True
-      # ret.wheelbase = 2.63906
-      # ret.mass = 3060. * CV.LB_TO_KG + STD_CARGO_KG
-      # ret.safetyParam = 53
-      # ret.steerActuatorDelay = 0.60
-      # ret.steerRatio = 15.33
-      # tire_stiffness_factor = 0.996  # not optimized yet
-      # ret.lateralTuning.init('indi')
-      # ret.lateralTuning.indi.innerLoopGain = 15.0
-      # ret.lateralTuning.indi.outerLoopGainBP = [20, 21, 25 ,26]
-      # ret.lateralTuning.indi.outerLoopGainV = [4.0, 8.5, 9.0, 14.99]
-      # ret.lateralTuning.indi.timeConstant = 5.5
-      # ret.lateralTuning.indi.actuatorEffectiveness = 15.0
+      ret.safetyParam = 53
+      ret.steerActuatorDelay = 0.60
+      ret.steerRatio = 15.33
+      tire_stiffness_factor = 0.996  # not optimized yet
+      ret.lateralTuning.init('indi')
+      ret.lateralTuning.indi.innerLoopGain = 15.0
+      ret.lateralTuning.indi.outerLoopGainBP = [20, 21, 25 ,26]
+      ret.lateralTuning.indi.outerLoopGainV = [4.0, 8.5, 9.0, 14.99]
+      ret.lateralTuning.indi.timeConstant = 5.5
+      ret.lateralTuning.indi.actuatorEffectiveness = 15.0
 
     elif candidate in [CAR.LEXUS_ES_TSS2, CAR.LEXUS_ESH_TSS2]:
       stop_and_go = True
