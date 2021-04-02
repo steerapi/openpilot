@@ -28,7 +28,7 @@ def manager_init():
     ("CommunityFeaturesToggle", "0"),
     ("EndToEndToggle", "0"),
     ("CompletedTrainingVersion", "0"),
-    ("IsRHD", "0"),
+    ("IsRHD", "1"),
     ("IsMetric", "0"),
     ("RecordFront", "0"),
     ("HasAcceptedTerms", "0"),
