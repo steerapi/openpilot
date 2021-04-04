@@ -231,7 +231,7 @@ def update_custom_logic(msg):
     msg.dragonConf.dpAccelProfile = 0
     msg.dragonConf.dpGearCheck = False
   if msg.dragonConf.dpAppWaze or msg.dragonConf.dpAppHr:
-    msg.dragonConf.dpDrivingUi = False
+    msg.dragonConf.dpDrivingUi = True
   if not msg.dragonConf.dpDriverMonitor:
     msg.dragonConf.dpUiFace = False
   return msg
