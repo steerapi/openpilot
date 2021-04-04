@@ -248,9 +248,9 @@ int main(int argc, char* argv[]) {
     update_offroad_layout_state(s, pm);
 
     // skip refresh when running waze
-    if (s->scene.dpFullScreenApp && s->started) {
-      continue;
-    }
+    // if (s->scene.dpFullScreenApp && s->started) {
+    //   continue;
+    // }
     ui_draw(s);
     double u2 = millis_since_boot();
     if (!s->scene.frontview && (u2-u1 > 132)) {
