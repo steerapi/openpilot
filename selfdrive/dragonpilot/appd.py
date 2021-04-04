@@ -325,23 +325,23 @@ def init_apps(apps):
       "SYSTEM_ALERT_WINDOW",
     ]
   ))
-  # apps.append(App(
-  #   "com.waze",
-  #   "am start -n com.waze/com.waze.MainActivity",
-  #   "dp_app_waze",
-  #   None,
-  #   "dp_app_waze_manual",
-  #   App.TYPE_FULLSCREEN,
-  #   False,
-  #   [
-  #     "android.permission.ACCESS_FINE_LOCATION",
-  #     "android.permission.ACCESS_COARSE_LOCATION",
-  #     "android.permission.READ_EXTERNAL_STORAGE",
-  #     "android.permission.WRITE_EXTERNAL_STORAGE",
-  #     "android.permission.RECORD_AUDIO",
-  #   ],
-  #   [],
-  # ))
+  apps.append(App(
+    "com.waze",
+    "am start -n com.waze/com.waze.MainActivity",
+    "dp_app_waze",
+    None,
+    "dp_app_waze_manual",
+    App.TYPE_FULLSCREEN,
+    False,
+    [
+      "android.permission.ACCESS_FINE_LOCATION",
+      "android.permission.ACCESS_COARSE_LOCATION",
+      "android.permission.READ_EXTERNAL_STORAGE",
+      "android.permission.WRITE_EXTERNAL_STORAGE",
+      "android.permission.RECORD_AUDIO",
+    ],
+    [],
+  ))
   # pm disable gb.xxy.hr && pm enable gb.xxy.hr && am broadcast -a "gb.xxy.hr.WIFI_START"
   apps.append(App(
     "gb.xxy.hr",
